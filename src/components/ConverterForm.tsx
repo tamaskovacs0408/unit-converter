@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ConverterResult from "./ConverterResult"
 
 export default function ConverterForm() {
   const [mmUnit, setMmUnit] = useState(0)
@@ -14,12 +15,16 @@ export default function ConverterForm() {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <p>
         <label htmlFor="mm">
-          <input type="number" id="mm" name="mm" />
+          <input type="number" id="mm" name="mm" step={0.1}/>
         </label>
       </p>
+      <button>Convert</button>
     </form>
+    <p>{mmUnit} = {(mmUnit * 0.1).toFixed(2)} cm</p>
+    </>
   )
 }
