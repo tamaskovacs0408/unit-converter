@@ -8,7 +8,7 @@ export default function ConverterForm() {
     event.preventDefault()
 
     const fd = new FormData(event.currentTarget)
-    const units = fd.getAll('units');
+    const units = fd.getAll('from-units');
     const data: {[key: string]: FormDataEntryValue | FormDataEntryValue[]} = Object.fromEntries(fd.entries());
     data.unitData = units;
     const selectedUnit = data.unitData[0].toString();
@@ -27,13 +27,16 @@ export default function ConverterForm() {
   return (
     <>
     <form onSubmit={handleSubmit}>
-      <select name="units" id="units">
+      <label htmlFor="from-units">
+      Convert from:
+      <select name="from-units" id="from-units">
         <option value='mm'>mm</option>
         <option value='cm'>cm</option>
         <option value='dm'>dm</option>
         <option value='m'>m</option>
         <option value='km'>km</option>
       </select>
+      </label>
       <p>
         <label htmlFor="length-unit">
           <input type="number" id="length-unit" name={unit} step={0.1}/>
