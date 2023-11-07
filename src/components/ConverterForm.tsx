@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import LengthUnitResult from './LengthUnitResult';
 
 export default function ConverterForm() {
     const [lengthUnit, setLengthUnit] = useState(0);
     const [unit, setUnit] = useState<string>('');
     const [targetUnit, setTargetUnit] = useState('');
+
+    const inputLengthUnit = useRef<HTMLInputElement>(null);
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -19,15 +22,11 @@ export default function ConverterForm() {
         const selectedUnit = data.fromUnitData[0].toString();
         const selectedTargetUnit = data.toUnitData[0].toString();
 
+        const enteredInputLengthUnit = Number(inputLengthUnit.current!.value);
+
         setUnit(selectedUnit);
         setTargetUnit(selectedTargetUnit);
-
-        const convertableUnit = Number(unit);
-
-        if (convertableUnit && convertableUnit > 0) {
-            setLengthUnit(convertableUnit);
-        }
-        console.log(data);
+        setLengthUnit(enteredInputLengthUnit);
     }
 
     return (
@@ -48,7 +47,7 @@ export default function ConverterForm() {
                         <input
                             type='number'
                             id='length-unit'
-                            name={unit}
+                            ref={inputLengthUnit}
                             step={0.1}
                         />
                     </label>
@@ -63,7 +62,7 @@ export default function ConverterForm() {
                 </select>
                 <button>Convert</button>
             </form>
-            
+            <LengthUnitResult unit={unit} targetUnit={targetUnit} lengthUnit={lengthUnit} />
         </>
     );
 }
