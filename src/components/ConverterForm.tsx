@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import LengthUnitResult from './LengthUnitResult';
+import { lengthUnits } from '../units';
 
 export default function ConverterForm() {
     const [lengthUnit, setLengthUnit] = useState(0);
@@ -54,15 +55,19 @@ export default function ConverterForm() {
                 </p>
                 Convert to:
                 <select name='to-units' id='to-units'>
-                    <option value='mm'>mm</option>
-                    <option value='cm'>cm</option>
-                    <option value='dm'>dm</option>
-                    <option value='m'>m</option>
-                    <option value='km'>km</option>
+                    {lengthUnits.map((unit) => (
+                        <option key={unit} value={unit}>
+                            {unit}
+                        </option>
+                    ))}
                 </select>
                 <button>Convert</button>
             </form>
-            <LengthUnitResult unit={unit} targetUnit={targetUnit} lengthUnit={lengthUnit} />
+            <LengthUnitResult
+                unit={unit}
+                targetUnit={targetUnit}
+                lengthUnit={lengthUnit}
+            />
         </>
     );
 }
