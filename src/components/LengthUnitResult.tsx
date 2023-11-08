@@ -9,10 +9,10 @@ export default function LengthUnitResult(props: LengthResultType) {
       dm: 0.1,
       m: 1,
       km: 1000,
-      inch: 0.0254,
-      feet: 0.3048,
-      yard: 0.9144,
-      mile: 1609.34,
+      in: 0.0254,
+      ft: 0.3048,
+      yd: 0.9144,
+      mi: 1609.34,
     };
     
     function convertLength(value: number, fromUnit: string, toUnit: string) {
