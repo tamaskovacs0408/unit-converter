@@ -36,11 +36,11 @@ export default function ConverterForm() {
                 <label htmlFor='from-units'>
                     Convert from:
                     <select name='from-units' id='from-units'>
-                        <option value='mm'>mm</option>
-                        <option value='cm'>cm</option>
-                        <option value='dm'>dm</option>
-                        <option value='m'>m</option>
-                        <option value='km'>km</option>
+                    {lengthUnits.map((unit) => (
+                        <option key={unit} value={unit}>
+                            {unit}
+                        </option>
+                    ))}
                     </select>
                 </label>
                 <p>
