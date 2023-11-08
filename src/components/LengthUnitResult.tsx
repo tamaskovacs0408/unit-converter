@@ -1,14 +1,30 @@
-import { LengthResultType } from '../types';
+import { LengthResultType, UnitFactorsType } from '../types';
 
 export default function LengthUnitResult(props: LengthResultType) {
     const { unit, lengthUnit, targetUnit } = props;
 
+    const getConversionFactor = (unit: string, toMeter = false) => {
+      const unitFactors: UnitFactorsType = {
+        mm: 0.001,
+        cm: 0.01,
+        dm: 0.1,
+        m: 1,
+        km: 1000,
+        inch: 0.0254,
+        feet: 0.3048,
+        yard: 0.9144,
+        mile: 1609.34,
+      };
+    
+      return toMeter ? 1 / unitFactors[unit] : unitFactors[unit];
+    };
+
+    const result = getConversionFactor(targetUnit, true) * lengthUnit;
+
     return (
       <>
-      <h2>Converted result:</h2>
-        <p>{unit}</p>
-        <p>{lengthUnit}</p>
-        <p>{targetUnit}</p>
+      <h2>Result:</h2>
+        <p>{result} {targetUnit}</p>
       </>
     )
 }
