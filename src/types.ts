@@ -3,3 +3,7 @@ export type LengthResultType = {
   targetUnit: string;
   lengthUnit: number;
 }
+
+export type UnitFactorsType = {
+  [key: string]: number;
+}
