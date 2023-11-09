@@ -24,8 +24,9 @@ export default function LengthUnitResult(props: LengthResultType) {
 
     return (
       <>
-      <h2>Result:</h2>
-        <p>{result} {targetUnit}</p>
+        {result ? (
+          <p>{result} {targetUnit}</p>
+        ): ''}
       </>
     )
 }
