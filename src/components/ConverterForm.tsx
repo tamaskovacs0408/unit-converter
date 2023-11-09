@@ -50,6 +50,8 @@ export default function ConverterForm() {
                             id='length-unit'
                             ref={inputLengthUnit}
                             step={0.1}
+                            min={0}
+                            defaultValue={0}
                         />
                     </label>
                 </p>
