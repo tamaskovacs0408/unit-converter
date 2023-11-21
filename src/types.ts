@@ -11,6 +11,12 @@ export type UnitFactorsType = {
 }
 
 export type InputComponentType = {
-  lengthUnitId: string;
-  inputLengthUnit?: RefObject<HTMLInputElement>;
+  unitId: string;
+  unitRef?: RefObject<HTMLInputElement>;
+}
+
+export type UnitSelectorProps = {
+  convertTitle: string;
+  unitId: string;
+  unitsArray: string[];
 }
