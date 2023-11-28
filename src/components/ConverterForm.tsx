@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import LengthUnitResult from './LengthUnitResult';
 import { lengthUnits } from '../units';
 import Input from '../UI/Input';
+import UnitSelector from './UnitSelector';
 
 export default function ConverterForm() {
     const [lengthUnit, setLengthUnit] = useState(0);
@@ -34,29 +35,9 @@ export default function ConverterForm() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='from-units'>
-                    Convert from:
-                    <select name='from-units' id='from-units'>
-                        {lengthUnits.map(unit => (
-                            <option key={unit} value={unit}>
-                                {unit}
-                            </option>
-                        ))}
-                    </select>
-                </label>
-                <p>
-                    <label htmlFor='length-unit'>
-                        <Input lengthUnitId="length-unit" inputLengthUnit={inputLengthUnit} />
-                    </label>
-                </p>
-                Convert to:
-                <select name='to-units' id='to-units'>
-                    {lengthUnits.map(unit => (
-                        <option key={unit} value={unit}>
-                            {unit}
-                        </option>
-                    ))}
-                </select>
+                <UnitSelector convertTitle='From' unitId="from-units" unitsArray={lengthUnits}/>
+                <Input unitId="length-unit" unitRef={inputLengthUnit} />
+                <UnitSelector convertTitle='To' unitId="to-units" unitsArray={lengthUnits}/>
                 <button>Convert</button>
             </form>
             <LengthUnitResult
