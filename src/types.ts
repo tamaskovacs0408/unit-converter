@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import { type ComponentPropsWithRef } from "react";
 
 export type LengthResultType = {
   unit: string;
@@ -12,8 +12,7 @@ export type UnitFactorsType = {
 
 export type InputComponentType = {
   unitId: string;
-  unitRef?: RefObject<HTMLInputElement>;
-}
+} & ComponentPropsWithRef<'input'>;
 
 export type UnitSelectorProps = {
   convertTitle: string;
