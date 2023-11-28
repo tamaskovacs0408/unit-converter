@@ -5,7 +5,7 @@ import Input from '../UI/Input';
 import UnitSelector from './UnitSelector';
 
 export default function ConverterForm() {
-  const [lengthUnit, setLengthUnit] = useState(0);
+  const [enteredUnit, setEnteredUnit] = useState(0);
   const [unit, setUnit] = useState<string>('');
   const [targetUnit, setTargetUnit] = useState('');
 
@@ -25,11 +25,11 @@ export default function ConverterForm() {
     const selectedUnit = data.fromUnitData[0].toString();
     const selectedTargetUnit = data.toUnitData[0].toString();
 
-    const enteredInputLengthUnit = Number(inputLengthUnit.current!.value);
+    const enteredInputUnit = Number(inputLengthUnit.current!.value);
 
     setUnit(selectedUnit);
     setTargetUnit(selectedTargetUnit);
-    setLengthUnit(enteredInputLengthUnit);
+    setEnteredUnit(enteredInputUnit);
   }
 
   return (
@@ -58,7 +58,7 @@ export default function ConverterForm() {
       <LengthUnitResult
         unit={unit}
         targetUnit={targetUnit}
-        lengthUnit={lengthUnit}
+        lengthUnit={enteredUnit}
       />
     </>
   );
