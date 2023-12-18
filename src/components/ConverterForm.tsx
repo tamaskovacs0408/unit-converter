@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import LengthUnitResult from './LengthUnitResult';
+import LengthUnitResult from './UnitResult';
 import { lengthUnits } from '../units';
 import Input from '../UI/Input';
 import UnitSelector from './UnitSelector';
