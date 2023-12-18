@@ -1,10 +1,8 @@
-import { UnitConverterFormulaType } from '../types';
-
 export default function unitConverter(
-  conversion: UnitConverterFormulaType
+  value: number,
+  from: string,
+  to: string,
+  unitFactor: Record<string, number>
 ): number {
-  return (
-    (conversion.value * conversion.unitFactor[conversion.from]) /
-    conversion.unitFactor[conversion.to]
-  );
+  return (value * unitFactor[from]) / unitFactor[to];
 }
