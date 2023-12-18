@@ -19,3 +19,10 @@ export type UnitSelectorProps = {
   unitId: string;
   unitsArray: string[];
 }
+
+export type UnitConverterFormulaType = {
+  value: number,
+  from: string,
+  to: string,
+  unitFactor: Record<string, number>
+}
