@@ -1,6 +1,6 @@
 import { UnitFactorsType } from "./types"
 
-export const lengtUnitFactors: UnitFactorsType = {
+export const lengthUnitFactors: UnitFactorsType = {
   mm: 0.001,
   cm: 0.01,
   dm: 0.1,
