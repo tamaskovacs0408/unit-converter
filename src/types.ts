@@ -1,14 +1,14 @@
-import { type ComponentPropsWithRef } from "react";
+import { type ComponentPropsWithRef } from 'react';
 
 export type LengthResultType = {
   unit: string;
   targetUnit: string;
   lengthUnit: number;
-}
+};
 
 export type UnitFactorsType = {
   [key: string]: number;
-}
+};
 
 export type InputComponentType = {
   unitId: string;
@@ -18,11 +18,16 @@ export type UnitSelectorProps = {
   convertTitle: string;
   unitId: string;
   unitsArray: string[];
-}
+};
 
-export type SelectedUnitTypes = 'length' | 'weight' | 'liquid';
+export type SelectedUnitTypes = 'length' | 'weight' | 'volume';
+
+export type ButtonProps = {
+  id: SelectedUnitTypes;
+  title: string;
+};
 
 export type SelectedUnitContextType = {
   selectedUnitState: SelectedUnitTypes;
   handleUnitSelect: (unit: SelectedUnitTypes) => void;
-}
+};
