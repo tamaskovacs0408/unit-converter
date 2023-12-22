@@ -1,9 +1,9 @@
 import { LengthResultType } from '../types';
 
-import { lengthUnitFactors } from '../unitFactors';
+import { lengthUnitFactors, weightUnitFactors, volumeUnitFactors } from '../unitFactors';
 import unitConverter from '../lib/converter';
 
-export default function LengthUnitResult(props: LengthResultType) {
+export default function UnitResult(props: LengthResultType) {
   const { unit, lengthUnit, targetUnit } = props;
 
   const result = Number(

@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
-import LengthUnitResult from './UnitResult';
-import { lengthUnits } from '../units';
+import UnitResult from './UnitResult';
+import { lengthUnits, weightUnits, volumeUnits } from '../units';
 import Input from '../UI/Input';
 import UnitSelector from './UnitSelector';
 
@@ -55,7 +55,7 @@ export default function ConverterForm() {
         />
         <button>Convert</button>
       </form>
-      <LengthUnitResult
+      <UnitResult
         unit={unit}
         targetUnit={targetUnit}
         lengthUnit={enteredUnit}
