@@ -19,3 +19,10 @@ export type UnitSelectorProps = {
   unitId: string;
   unitsArray: string[];
 }
+
+export type SelectedUnitTypes = 'length' | 'weight' | 'liquid';
+
+export type SelectedUnitContextType = {
+  selectedUnitState: SelectedUnitTypes;
+  handleUnitSelect: (unit: SelectedUnitTypes) => void;
+}
