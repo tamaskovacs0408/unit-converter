@@ -1,9 +1,9 @@
 import { type ComponentPropsWithRef } from 'react';
 
-export type LengthResultType = {
+export type ResultType = {
   unit: string;
   targetUnit: string;
-  lengthUnit: number;
+  fromUnit: number;
 };
 
 export type UnitFactorsType = {
