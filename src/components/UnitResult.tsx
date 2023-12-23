@@ -1,13 +1,13 @@
-import { LengthResultType } from '../types';
+import { ResultType } from '../types';
 
 import { lengthUnitFactors, weightUnitFactors, volumeUnitFactors } from '../unitFactors';
 import unitConverter from '../lib/converter';
 
-export default function UnitResult(props: LengthResultType) {
-  const { unit, lengthUnit, targetUnit } = props;
+export default function UnitResult(props: ResultType) {
+  const { unit, fromUnit, targetUnit } = props;
 
   const result = Number(
-    unitConverter(lengthUnit, unit, targetUnit, lengthUnitFactors)?.toFixed(2)
+    unitConverter(fromUnit, unit, targetUnit, lengthUnitFactors)?.toFixed(2)
   );
 
   return (

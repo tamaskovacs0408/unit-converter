@@ -10,7 +10,7 @@ export default function ConverterForm() {
   const [unit, setUnit] = useState<string>('');
   const [targetUnit, setTargetUnit] = useState('');
 
-  const inputLengthUnit = useRef<HTMLInputElement>(null);
+  const inputUnit = useRef<HTMLInputElement>(null);
 
   const { selectedUnitState } = useContext(SelectedUnitContext);
 
@@ -42,7 +42,7 @@ export default function ConverterForm() {
     const selectedUnit = data.fromUnitData[0].toString();
     const selectedTargetUnit = data.toUnitData[0].toString();
 
-    const enteredInputUnit = Number(inputLengthUnit.current!.value);
+    const enteredInputUnit = Number(inputUnit.current!.value);
 
     setUnit(selectedUnit);
     setTargetUnit(selectedTargetUnit);
@@ -63,7 +63,7 @@ export default function ConverterForm() {
           step={0.01}
           min={0}
           defaultValue={0}
-          ref={inputLengthUnit}
+          ref={inputUnit}
         />
         <UnitSelector
           convertTitle='To'
@@ -75,7 +75,7 @@ export default function ConverterForm() {
       <UnitResult
         unit={unit}
         targetUnit={targetUnit}
-        lengthUnit={enteredUnit}
+        fromUnit={enteredUnit}
       />
     </>
   );
