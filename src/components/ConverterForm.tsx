@@ -5,6 +5,8 @@ import Input from '../UI/Input';
 import UnitSelector from './UnitSelector';
 import { SelectedUnitContext } from '../store/selectedUnitContext';
 
+import classes from './ConverterForm.module.scss';
+
 export default function ConverterForm() {
   const [enteredUnit, setEnteredUnit] = useState(0);
   const [unit, setUnit] = useState<string>('');
@@ -16,16 +18,16 @@ export default function ConverterForm() {
 
   let unitType;
 
-  if (selectedUnitState === 'length') {
-    unitType = lengthUnits;
-  }
-
-  if (selectedUnitState === 'weight') {
-    unitType = weightUnits;
-  }
-
-  if (selectedUnitState === 'volume') {
-    unitType = volumeUnits;
+  switch (selectedUnitState) {
+    case 'length':
+      unitType = lengthUnits;
+      break;
+    case 'weight':
+      unitType = weightUnits;
+      break;
+    case 'volume':
+      unitType = volumeUnits;
+      break;
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -51,7 +53,8 @@ export default function ConverterForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <h2>Convert {selectedUnitState} units</h2>
         <UnitSelector
           convertTitle='From'
           unitId='from-units'
@@ -72,11 +75,7 @@ export default function ConverterForm() {
         />
         <button>Convert</button>
       </form>
-      <UnitResult
-        unit={unit}
-        targetUnit={targetUnit}
-        fromUnit={enteredUnit}
-      />
+      <UnitResult unit={unit} targetUnit={targetUnit} fromUnit={enteredUnit} />
     </>
   );
 }
