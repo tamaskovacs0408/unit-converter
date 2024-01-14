@@ -73,7 +73,7 @@ export default function ConverterForm() {
           unitId='to-units'
           unitsArray={unitType || []}
         />
-        <button>Convert</button>
+        <button className={classes["convert-button"]}>Convert</button>
       </form>
       <UnitResult unit={unit} targetUnit={targetUnit} fromUnit={enteredUnit} />
     </>

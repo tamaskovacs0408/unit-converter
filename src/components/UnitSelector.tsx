@@ -1,10 +1,12 @@
 import { UnitSelectorProps } from '../types';
 
+import classes from './UnitSelector.module.scss';
+
 export default function UnitSelector(props: UnitSelectorProps) {
     const { convertTitle, unitId, unitsArray } = props;
 
     return (
-        <label htmlFor={unitId}>
+        <label className={classes.label} htmlFor={unitId}>
             {convertTitle}
             <select name={unitId} id={unitId}>
                 {unitsArray.map(unit => (
