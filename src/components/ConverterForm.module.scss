@@ -1,0 +1,17 @@
+.form {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+}
+
+.convert-button {
+  width: 50%;
+  margin: 0 auto;
+  background: greenyellow;
+  color: black;
+}
