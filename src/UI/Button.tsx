@@ -14,7 +14,7 @@ export default function Button(props: ButtonProps) {
   const { handleUnitSelect } = useContext(SelectedUnitContext);
 
   return (
-    <button className={classes.button} id={id} onClick={() => handleUnitSelect(id)}>
+    <button className={classes.selectorButton} id={id} onClick={() => handleUnitSelect(id)}>
       {title === 'Length' && <LengthIcon />}
       {title === 'Weight' && <WeightIcon />}
       {title === 'Volume' && <VolumeIcon />}
