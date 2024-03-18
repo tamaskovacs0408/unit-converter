@@ -1,13 +1,14 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vitest/config';
+import { defineConfig, mergeConfig } from 'vitest/config';
+import viteConfig from './vite.config.js'
 
 
-export default defineConfig({
+export default mergeConfig(viteConfig, defineConfig({
     test: {
         globals: true,
         environment: 'jsdom',
         css: true
     },
-})
+}))
