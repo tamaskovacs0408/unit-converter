@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 120px;
   padding: 1.5rem;
 
   &:active,
@@ -23,8 +23,8 @@
   }
 
   svg {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4rem;
+    height: 4rem;
 
     @media (max-width: 425px) {
       width: 2.5rem;
@@ -33,7 +33,7 @@
   }
 
   span {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     margin-top: 1.5rem;
 
