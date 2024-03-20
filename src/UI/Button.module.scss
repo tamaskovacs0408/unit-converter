@@ -1,6 +1,9 @@
 .selectorButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  font-size: 2rem;
   padding: 1.5rem;
 
   &:active,
@@ -10,7 +13,32 @@
   }
 
   &:active svg,
-  &:focus svg {
+  &:focus svg,
+  &:hover svg {
     color: #6FE249;
+  }
+
+  @media (max-width: 425px) {
+    padding: 1rem;
+  }
+
+  svg {
+    width: 4.5rem;
+    height: 4.5rem;
+
+    @media (max-width: 425px) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  span {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.5rem;
+    }
   }
 }
