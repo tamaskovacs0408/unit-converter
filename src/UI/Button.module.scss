@@ -5,11 +5,17 @@
   align-items: center;
   max-width: 120px;
   padding: 1.5rem;
+  background: transparent;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0px 0px 3px 0px #ffffff;
+  color: #ffffff;
 
   &:active,
   &:focus {
     box-shadow: 0px 0px 8px 1px #6FE249;
     color: #6FE249;
+    border-color: #6FE249;
   }
 
   &:active svg,
@@ -25,6 +31,12 @@
   svg {
     width: 4rem;
     height: 4rem;
+    color: #ffffff;
+
+    @media (max-width: 768px) {
+      width: 3rem;
+      height: 3rem;
+    }
 
     @media (max-width: 425px) {
       width: 2.5rem;
