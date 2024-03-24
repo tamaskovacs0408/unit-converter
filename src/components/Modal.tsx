@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { ModalPorps } from "../types";
 import classes from "./Modal.module.scss";
 import {SelectedUnitContext} from '../store/selectedUnitContext';
@@ -9,23 +9,18 @@ export default function Modal(props: ModalPorps) {
 
   const { selectedUnitState } = useContext(SelectedUnitContext);
 
-  let convertableUnit;
-
-  switch (selectedUnitState) {
-    case 'length':
-      convertableUnit = convertableLengthUnits;
-      break;
-    case 'weight':
-      convertableUnit = convertableWeightUnits;
-      break;
-    case 'volume':
-      convertableUnit = convertableVolumeUnits;
-      break;
-  }
-
-
-
-
+  const convertableUnits = useMemo(() => {
+    switch (selectedUnitState) {
+      case 'length':
+        return convertableLengthUnits;
+      case 'weight':
+        return convertableWeightUnits;
+      case 'volume':
+        return convertableVolumeUnits;
+      default:
+        return [];
+    }
+  }, [selectedUnitState]);
 
   return (
     showModal && (
@@ -33,7 +28,7 @@ export default function Modal(props: ModalPorps) {
         <div className={classes["modal-container"]}>
             <button onClick={toggleModal}>X</button>
             <ul>
-              {convertableUnit.map(data => (
+              {convertableUnits.map(data => (
                 <li key={data.id}>{data.unit} - {data.title}</li>
               ))}
             </ul>
