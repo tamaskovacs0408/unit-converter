@@ -37,3 +37,8 @@ export type ConvertableUnits = {
   unit: string;
   title: string;
 }
+
+export type ModalPorps = {
+  showModal: boolean;
+  toggleModal: () => void;
+}
