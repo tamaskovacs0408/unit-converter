@@ -31,3 +31,9 @@ export type SelectedUnitContextType = {
   selectedUnitState: SelectedUnitTypes;
   handleUnitSelect: (unit: SelectedUnitTypes) => void;
 };
+
+export type ConvertableUnits = {
+  id: number;
+  unit: string;
+  title: string;
+}
