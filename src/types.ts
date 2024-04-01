@@ -20,12 +20,13 @@ export type UnitSelectorProps = {
   unitsArray: string[];
 };
 
-export type SelectedUnitTypes = 'length' | 'weight' | 'volume';
+export type SelectedUnitTypes = string;
 
 export type ButtonProps = {
-  id: SelectedUnitTypes;
+  id: string;
   title: string;
-};
+  handleUnitSelect: (unit: SelectedUnitTypes) => void;
+}
 
 export type SelectedUnitContextType = {
   selectedUnitState: SelectedUnitTypes;
