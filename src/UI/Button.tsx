@@ -11,11 +11,10 @@ export default function Button(props: ButtonProps) {
 
   return (
     <>
-      <label htmlFor={id}>
+      <label htmlFor={id} className={classes.selectorButton}>
         {title}
         <input
           type='radio'
-          className={classes.selectorButton}
           id={id}
           name='unit'
           defaultChecked={id === "length"}
