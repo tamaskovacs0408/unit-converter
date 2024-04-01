@@ -10,18 +10,20 @@
   border: none;
   box-shadow: 0px 0px 3px 0px #ffffff;
   color: #ffffff;
+  transition: all ease-in .2s;
 
-  &:active,
-  &:focus {
+  &:has(input:checked) {
     box-shadow: 0px 0px 8px 1px #6FE249;
     color: #6FE249;
     border-color: #6FE249;
   }
 
-  &:active svg,
-  &:focus svg,
-  &:hover svg {
+  &:has(input:checked) svg {
     color: #6FE249;
+  }
+
+  input[type="radio"] {
+    display: none;
   }
 
   @media (max-width: 425px) {
@@ -32,6 +34,7 @@
     width: 4rem;
     height: 4rem;
     color: #ffffff;
+    transition: all ease-in .2s;
 
     @media (max-width: 768px) {
       width: 3rem;
