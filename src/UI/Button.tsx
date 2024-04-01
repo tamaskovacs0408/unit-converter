@@ -1,24 +1,30 @@
-import { useContext } from 'react';
-import { ButtonProps } from '../types';
-import { SelectedUnitContext } from '../store/selectedUnitContext';
+import { ButtonProps } from "../types";
 
-import LengthIcon from './LengthIcon';
-import WeightIcon from './WeightIcon';
-import VolumeIcon from './VolumeIcon';
+import LengthIcon from "./LengthIcon";
+import WeightIcon from "./WeightIcon";
+import VolumeIcon from "./VolumeIcon";
 
-import classes from './Button.module.scss';
+import classes from "./Button.module.scss";
 
 export default function Button(props: ButtonProps) {
-  const { id, title } = props;
-
-  const { handleUnitSelect } = useContext(SelectedUnitContext);
+  const { id, title, handleUnitSelect } = props;
 
   return (
-    <button className={classes.selectorButton} id={id} onClick={() => handleUnitSelect(id)}>
-      {title === 'Length' && <LengthIcon />}
-      {title === 'Weight' && <WeightIcon />}
-      {title === 'Volume' && <VolumeIcon />}
-      <span>{title}</span>
-    </button>
+    <>
+      <label htmlFor={id}>
+        {title}
+        <input
+          type='radio'
+          className={classes.selectorButton}
+          id={id}
+          name='unit'
+          defaultChecked={id === "length"}
+          onClick={() => handleUnitSelect(id)}
+        />
+        {title === "Length" && <LengthIcon />}
+        {title === "Weight" && <WeightIcon />}
+        {title === "Volume" && <VolumeIcon />}
+      </label>
+    </>
   );
 }
