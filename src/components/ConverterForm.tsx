@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useMemo } from 'react';
+import { useState, useRef, useContext } from 'react';
 import UnitResult from './UnitResult';
 import { lengthUnits, weightUnits, volumeUnits } from '../units';
 import Input from '../UI/Input';
@@ -16,18 +16,19 @@ export default function ConverterForm() {
 
   const { selectedUnitState } = useContext(SelectedUnitContext);
 
-  const unitType = useMemo(() => {
-    switch (selectedUnitState) {
-      case 'length':
-        return lengthUnits;
-      case 'weight':
-        return weightUnits;
-      case 'volume':
-        return volumeUnits;
-      default:
-        return [];
-    }
-  }, [selectedUnitState])
+  let unitType;
+
+  switch (selectedUnitState) {
+    case 'length':
+      unitType = lengthUnits;
+      break;
+    case 'weight':
+      unitType = weightUnits;
+      break;
+    case 'volume':
+      unitType = volumeUnits;
+      break;
+  }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
