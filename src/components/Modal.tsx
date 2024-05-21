@@ -26,7 +26,7 @@ export default function Modal(props: ModalPorps) {
     showModal && (
       <div className={classes["modal-wrapper"]} onClick={toggleModal}>
         <div className={classes["modal-container"]}>
-            <button onClick={toggleModal}>X</button>
+            <button onClick={toggleModal}></button>
             <ul>
               {convertableUnits.map(data => (
                 <li key={data.id}>{data.unit} - {data.title}</li>
