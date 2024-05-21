@@ -1,16 +1,16 @@
-import { useState, useRef, useContext } from 'react';
-import UnitResult from './UnitResult';
-import { lengthUnits, weightUnits, volumeUnits } from '../units';
-import Input from '../UI/Input';
-import UnitSelector from './UnitSelector';
-import { SelectedUnitContext } from '../store/selectedUnitContext';
+import { useState, useRef, useContext } from "react";
+import UnitResult from "./UnitResult";
+import { lengthUnits, weightUnits, volumeUnits } from "../units";
+import Input from "../UI/Input";
+import UnitSelector from "./UnitSelector";
+import { SelectedUnitContext } from "../store/selectedUnitContext";
 
-import classes from './ConverterForm.module.scss';
+import classes from "./ConverterForm.module.scss";
 
 export default function ConverterForm() {
   const [enteredUnit, setEnteredUnit] = useState(0);
-  const [unit, setUnit] = useState<string>('');
-  const [targetUnit, setTargetUnit] = useState('');
+  const [unit, setUnit] = useState<string>("");
+  const [targetUnit, setTargetUnit] = useState("");
 
   const inputUnit = useRef<HTMLInputElement>(null);
 
@@ -19,13 +19,13 @@ export default function ConverterForm() {
   let unitType;
 
   switch (selectedUnitState) {
-    case 'length':
+    case "length":
       unitType = lengthUnits;
       break;
-    case 'weight':
+    case "weight":
       unitType = weightUnits;
       break;
-    case 'volume':
+    case "volume":
       unitType = volumeUnits;
       break;
   }
@@ -34,8 +34,8 @@ export default function ConverterForm() {
     event.preventDefault();
 
     const fd = new FormData(event.currentTarget);
-    const fromUnits = fd.getAll('from-units');
-    const toUnits = fd.getAll('to-units');
+    const fromUnits = fd.getAll("from-units");
+    const toUnits = fd.getAll("to-units");
     const data: {
       [key: string]: FormDataEntryValue | FormDataEntryValue[];
     } = Object.fromEntries(fd.entries());
@@ -55,11 +55,18 @@ export default function ConverterForm() {
     <>
       <form className={classes.form} onSubmit={handleSubmit}>
         <h2>Convert {selectedUnitState} units</h2>
-        <UnitSelector
-          convertTitle='From'
-          unitId='from-units'
-          unitsArray={unitType || []}
-        />
+        <div className={classes["form-header"]}>
+          <UnitSelector
+            convertTitle='From'
+            unitId='from-units'
+            unitsArray={unitType || []}
+          />
+          <UnitSelector
+            convertTitle='To'
+            unitId='to-units'
+            unitsArray={unitType || []}
+          />
+        </div>
         <Input
           unitId='length-unit'
           type='number'
@@ -67,11 +74,6 @@ export default function ConverterForm() {
           min={0}
           defaultValue={0}
           ref={inputUnit}
-        />
-        <UnitSelector
-          convertTitle='To'
-          unitId='to-units'
-          unitsArray={unitType || []}
         />
         <button className={classes["convert-button"]}>Convert</button>
       </form>
