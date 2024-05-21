@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ResultType } from '../types';
 import { lengthUnitFactors, weightUnitFactors, volumeUnitFactors } from '../unitFactors';
-import unitConverter from '../lib/converter';
+import { unitConverter, toPowerOf10 } from '../lib/converter';
 import {SelectedUnitContext} from '../store/selectedUnitContext';
 
 export default function UnitResult(props: ResultType) {
@@ -23,9 +23,15 @@ export default function UnitResult(props: ResultType) {
     unitFactor = volumeUnitFactors;
   }
 
-  const result = Number(
-    unitConverter(fromUnit, unit, targetUnit, unitFactor)?.toFixed(2)
-  );
+  let result = Number(unitConverter(fromUnit, unit, targetUnit, unitFactor));
+
+  if (result <= 0.0000001 || result >= 1000000000000000000000) {
+    result = toPowerOf10(result);
+  } else {
+    result?.toFixed(2)
+  }
+
+  console.log("result", result);
 
   return (
     <>
