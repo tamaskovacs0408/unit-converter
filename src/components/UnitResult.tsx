@@ -31,8 +31,6 @@ export default function UnitResult(props: ResultType) {
     result?.toFixed(2)
   }
 
-  console.log("result", result);
-
   return (
     <>
       {result ? (
