@@ -2,6 +2,8 @@ import { useState } from "react";
 import { createPortal } from "react-dom";
 import Modal from "./Modal";
 
+import classes from "./ModalPortal.module.scss"
+
 export default function ModalPortal() {
   const [showModal, setShowModal] = useState(false);
 
@@ -11,7 +13,7 @@ export default function ModalPortal() {
 
   return (
     <>
-      <button onClick={toggleModal}>Convertable units</button>
+      <button className={classes["modal-opener"]} onClick={toggleModal}>Convertable units</button>
       {createPortal(
         <Modal showModal={showModal} toggleModal={toggleModal} />,
         document.querySelector("#modal-root") as HTMLElement

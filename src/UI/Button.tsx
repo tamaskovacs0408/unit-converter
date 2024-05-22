@@ -12,7 +12,7 @@ export default function Button(props: ButtonProps) {
   return (
     <>
       <label htmlFor={id} className={classes.selectorButton}>
-        {title}
+        <span>{title}</span>
         <input
           type='radio'
           id={id}

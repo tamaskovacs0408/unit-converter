@@ -54,7 +54,6 @@ export default function ConverterForm() {
   return (
     <>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <h2>Convert {selectedUnitState} units</h2>
         <div className={classes["form-header"]}>
           <UnitSelector
             convertTitle='From'
