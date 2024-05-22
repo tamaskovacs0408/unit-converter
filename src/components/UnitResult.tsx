@@ -4,6 +4,8 @@ import { lengthUnitFactors, weightUnitFactors, volumeUnitFactors } from '../unit
 import { unitConverter, toPowerOf10 } from '../lib/converter';
 import {SelectedUnitContext} from '../store/selectedUnitContext';
 
+import classes from "./UnitResult.module.scss";
+
 export default function UnitResult(props: ResultType) {
   const { unit, fromUnit, targetUnit } = props;
 
@@ -34,11 +36,11 @@ export default function UnitResult(props: ResultType) {
   return (
     <>
       {result ? (
-        <p>
+        <p className={classes.result}>
           {result} {targetUnit}
         </p>
       ) : (
-        ''
+        ""
       )}
     </>
   );
