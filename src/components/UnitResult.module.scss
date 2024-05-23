@@ -1,5 +1,11 @@
+@use "../_variables.scss" as vars;
+
+.container {
+    height: 3rem;
+}
+
 .result {
-    color: #FFFFFA;
+    color: vars.$secondary;
     font-size: 2rem;
     text-align: center;
     margin-top: 1.5rem;

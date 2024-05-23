@@ -1,8 +1,10 @@
+@use "../_variables.scss" as vars;
+
 .modal-opener {
     display: block;
-    color: #FFFFFA;
+    color: vars.$secondary;
     font-size: 2rem;
-    border: 1px solid #FFFFFA;
+    border: 1px solid vars.$secondary;
     border-radius: 1rem;
     background: transparent;
     margin: 2.5rem auto;
