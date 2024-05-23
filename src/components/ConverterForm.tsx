@@ -9,7 +9,7 @@ import classes from "./ConverterForm.module.scss";
 
 export default function ConverterForm() {
   const [enteredUnit, setEnteredUnit] = useState(0);
-  const [unit, setUnit] = useState<string>("");
+  const [unit, setUnit] = useState("");
   const [targetUnit, setTargetUnit] = useState("");
 
   const inputUnit = useRef<HTMLInputElement>(null);
