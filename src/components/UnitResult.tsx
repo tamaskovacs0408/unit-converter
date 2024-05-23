@@ -34,7 +34,7 @@ export default function UnitResult(props: ResultType) {
   }
 
   return (
-    <>
+    <div className={classes.container}>
       {result ? (
         <p className={classes.result}>
           {result} {targetUnit}
@@ -42,6 +42,6 @@ export default function UnitResult(props: ResultType) {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 }
