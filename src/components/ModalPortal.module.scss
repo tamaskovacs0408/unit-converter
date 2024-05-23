@@ -2,12 +2,16 @@
 
 .modal-opener {
     display: block;
-    color: vars.$secondary;
+    color: vars.$primary;
     font-size: 2rem;
-    border: 1px solid vars.$secondary;
+    border: 1px solid vars.$primary;
     border-radius: 1rem;
     background: transparent;
     margin: 2.5rem auto;
     padding: 1.5rem;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+        font-size: 1.8rem;
+    }
 }
