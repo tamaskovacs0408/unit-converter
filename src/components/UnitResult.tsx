@@ -30,7 +30,7 @@ export default function UnitResult(props: ResultType) {
   if (result <= 0.0000001 || result >= 1000000000000000000000) {
     result = toPowerOf10(result);
   } else {
-    result?.toFixed(2)
+    result = Number(result?.toFixed(2));
   }
 
   return (
