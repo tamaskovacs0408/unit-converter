@@ -29,11 +29,13 @@
   border: 1px solid vars.$primary;
   border-radius: 1rem;
   cursor: pointer;
-  transition: all ease-in .25s;
+  transition: all ease-in .1s;
 
-  &:hover {
-    box-shadow: 0px 0px 8px 2px vars.$primary;
-    letter-spacing: .3px;
+  @media (pointer: fine) {
+    &:hover {
+      box-shadow: 0px 0px 4px 2px vars.$primary;
+      letter-spacing: .3px;
+    }
   }
 
   &:active {

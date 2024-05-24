@@ -80,11 +80,13 @@
     }
   }
 
-  &:hover {
-    box-shadow: 0px 0px 8px 1px vars.$primary;
-
-    span, svg {
-      color: vars.$primary;
+  @media (pointer: fine) {
+    &:hover {
+      box-shadow: 0px 0px 8px 1px vars.$primary;
+  
+      span, svg {
+        color: vars.$primary;
+      }
     }
   }
 }
