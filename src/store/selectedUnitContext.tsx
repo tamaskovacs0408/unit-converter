@@ -1,4 +1,4 @@
-import { useState, createContext, PropsWithChildren } from 'react';
+import React, { useState, createContext, PropsWithChildren, useCallback } from 'react';
 import { SelectedUnitTypes, SelectedUnitContextType } from '../types';
 
 // const SelectedUnitContext = createContext('');
@@ -8,21 +8,18 @@ const SelectedUnitContext = createContext<SelectedUnitContextType>({
   handleUnitSelect: () => {},
 });
 
-function SelectedUnitProvider({ children }: PropsWithChildren) {
-  const [selectedUnitState, setSelectedUnitState] =
-    useState<SelectedUnitTypes>('length');
+const SelectedUnitProvider = React.memo(({ children }: PropsWithChildren) => {
+  const [selectedUnitState, setSelectedUnitState] = useState<SelectedUnitTypes>('length');
 
-  function handleUnitSelect(unit: SelectedUnitTypes) {
+  const handleUnitSelect = useCallback((unit: SelectedUnitTypes) => {
     setSelectedUnitState(unit);
-  }
+  }, []);
 
   return (
-    <SelectedUnitContext.Provider
-      value={{ selectedUnitState, handleUnitSelect }}
-    >
+    <SelectedUnitContext.Provider value={{ selectedUnitState, handleUnitSelect }}>
       {children}
     </SelectedUnitContext.Provider>
   );
-}
+});
 
 export { SelectedUnitContext, SelectedUnitProvider };
