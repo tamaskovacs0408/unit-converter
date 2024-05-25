@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    /* Testing with vitest */
     "types": ["vitest/globals"]
   },
   "include": ["src", "test/*.test.tsx"],
