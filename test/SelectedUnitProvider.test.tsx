@@ -3,7 +3,6 @@ import { describe, it, expect, afterEach } from 'bun:test';
 import { SelectedUnitProvider, SelectedUnitContext } from '../src/store/selectedUnitContext';
 import { useContext } from 'react';
 
-// Teszt komponens a kontextus értékeinek ellenőrzéséhez
 const TestComponent = () => {
   const { selectedUnitState, handleUnitSelect } = useContext(SelectedUnitContext);
   return (
@@ -16,7 +15,6 @@ const TestComponent = () => {
 
 describe('SelectedUnitProvider', () => {
   afterEach(() => {
-    // Tisztítjuk a DOM-ot minden teszt után
     document.body.innerHTML = '';
   });
 
