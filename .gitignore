@@ -27,3 +27,4 @@ dist-ssr
 # Temporary ignore test - bun type bug???
 
 ./test
+*test.tsx
