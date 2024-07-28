@@ -1,5 +1,5 @@
 import { render, screen, act } from '@testing-library/react';
-import { describe, it, expect, afterEach } from '@jest/globals';
+import { describe, it, expect, afterEach } from 'bun:test';
 import { SelectedUnitProvider, SelectedUnitContext } from '../src/store/selectedUnitContext';
 import { useContext } from 'react';
 
