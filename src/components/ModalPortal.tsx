@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
-import Modal from "./Modal";
+import Modal from "@/components/Modal";
 
-import classes from "./ModalPortal.module.scss"
+import classes from "@/components/ModalPortal.module.scss"
 
 export default function ModalPortal() {
   const [showModal, setShowModal] = useState(false);

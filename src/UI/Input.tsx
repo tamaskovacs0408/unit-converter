@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
-import { InputComponentType } from "../types/types";
+import { InputComponentType } from "@/types/types";
 
-import classes from "./Input.module.scss";
+import classes from "@/UI/Input.module.scss";
 
 const Input = forwardRef<HTMLInputElement, InputComponentType>(function (
   props,

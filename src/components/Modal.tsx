@@ -1,12 +1,12 @@
 import { useContext, useMemo } from "react";
-import { ModalPorps } from "../types/types";
-import classes from "./Modal.module.scss";
-import { SelectedUnitContext } from "../store/selectedUnitContext";
+import { ModalPorps } from "@/types/types";
+import classes from "@/components/Modal.module.scss";
+import { SelectedUnitContext } from "@/store/selectedUnitContext";
 import {
   convertableLengthUnits,
   convertableWeightUnits,
   convertableVolumeUnits,
-} from "../units";
+} from "@/utils/units";
 
 export default function Modal(props: ModalPorps) {
   const { showModal, toggleModal } = props;

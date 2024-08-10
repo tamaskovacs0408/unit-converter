@@ -1,9 +1,9 @@
-import UnitResult from "./UnitResult";
-import Input from "../UI/Input";
-import UnitSelector from "./UnitSelector";
-import { useUnitConverter } from "../hooks/useUnitConverter";
+import UnitResult from "@/components/UnitResult";
+import Input from "@/UI/Input";
+import UnitSelector from "@/components/UnitSelector";
+import { useUnitConverter } from "@/hooks/useUnitConverter";
 
-import classes from "./ConverterForm.module.scss";
+import classes from "@/components/ConverterForm.module.scss";
 
 export default function ConverterForm() {
   const {

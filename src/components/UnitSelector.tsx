@@ -1,6 +1,6 @@
-import { UnitSelectorProps } from "../types/types";
+import { UnitSelectorProps } from "@/types/types";
 
-import classes from "./UnitSelector.module.scss";
+import classes from "@/components/UnitSelector.module.scss";
 
 export default function UnitSelector(props: UnitSelectorProps) {
   const { convertTitle, unitId, unitsArray } = props;

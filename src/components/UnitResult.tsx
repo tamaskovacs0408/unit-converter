@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { ResultType } from "../types/types";
+import { ResultType } from "@/types/types";
 import {
   lengthUnitFactors,
   weightUnitFactors,
   volumeUnitFactors,
-} from "../unitFactors";
-import { unitConverter, toPowerOf10 } from "../utils/converter";
-import { SelectedUnitContext } from "../store/selectedUnitContext";
+} from "@/utils/unitFactors";
+import { unitConverter, toPowerOf10 } from "@/utils/converter";
+import { SelectedUnitContext } from "@/store/selectedUnitContext";
 
-import classes from "./UnitResult.module.scss";
+import classes from "@/components/UnitResult.module.scss";
 
 export default function UnitResult(props: ResultType) {
   const { unit, fromUnit, targetUnit } = props;

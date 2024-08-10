@@ -1,10 +1,10 @@
-import { ButtonProps } from "../types/types";
+import { ButtonProps } from "@/types/types";
 
-import LengthIcon from "./LengthIcon";
-import WeightIcon from "./WeightIcon";
-import VolumeIcon from "./VolumeIcon";
+import LengthIcon from "@/UI/LengthIcon";
+import WeightIcon from "@/UI/WeightIcon";
+import VolumeIcon from "@/UI/VolumeIcon";
 
-import classes from "./Button.module.scss";
+import classes from "@/UI/Button.module.scss";
 
 export default function Button(props: ButtonProps) {
   const { id, title, handleUnitSelect } = props;

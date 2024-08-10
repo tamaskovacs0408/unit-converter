@@ -4,7 +4,7 @@ import React, {
   PropsWithChildren,
   useCallback,
 } from "react";
-import { SelectedUnitTypes, SelectedUnitContextType } from "../types/types";
+import { SelectedUnitTypes, SelectedUnitContextType } from "@/types/types";
 
 // const SelectedUnitContext = createContext('');
 

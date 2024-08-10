@@ -1,6 +1,6 @@
 import { useState, useRef, useContext } from "react";
-import { SelectedUnitContext } from "../store/selectedUnitContext";
-import { lengthUnits, weightUnits, volumeUnits } from "../units";
+import { SelectedUnitContext } from "@/store/selectedUnitContext";
+import { lengthUnits, weightUnits, volumeUnits } from "@/utils/units";
 
 export function useUnitConverter() {
   const [enteredUnit, setEnteredUnit] = useState(0);

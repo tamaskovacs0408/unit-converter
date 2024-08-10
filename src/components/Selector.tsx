@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import Button from "../UI/Button";
-import classes from "./Selector.module.scss";
-import { SelectedUnitContext } from "../store/selectedUnitContext";
+import Button from "@/UI/Button";
+import classes from "@/components/Selector.module.scss";
+import { SelectedUnitContext } from "@/store/selectedUnitContext";
 
 export default function Selector() {
   const buttons = [
