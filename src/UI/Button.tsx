@@ -1,4 +1,4 @@
-import { ButtonProps } from "../types";
+import { ButtonProps } from "../types/types";
 
 import LengthIcon from "./LengthIcon";
 import WeightIcon from "./WeightIcon";

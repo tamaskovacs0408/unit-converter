@@ -1,4 +1,4 @@
-import { UnitFactorsType } from './types';
+import { UnitFactorsType } from "./types/types";
 
 export const lengthUnitFactors: UnitFactorsType = {
   mm: 0.001,
@@ -27,7 +27,7 @@ export const volumeUnitFactors: UnitFactorsType = {
   dl: 0.1,
   l: 1,
   cbm: 1000,
-  'fl oz': 0.0295735,
+  "fl oz": 0.0295735,
   pt: 0.473176,
   qt: 0.946353,
   gal: 3.78541,
