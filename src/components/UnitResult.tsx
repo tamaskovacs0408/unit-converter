@@ -31,7 +31,7 @@ export default function UnitResult(props: ResultType) {
 
   let result = Number(unitConverter(fromUnit, unit, targetUnit, unitFactor));
 
-  if (result <= 0.0000001 || result >= 1000000000000000000000) {
+  if (result <= 0.0000000001 || result >= 1000000000000000000000n) {
     result = toPowerOf10(result);
   } else {
     result = Number(result?.toFixed(2));
