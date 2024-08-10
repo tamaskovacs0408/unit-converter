@@ -9,7 +9,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["@testing-library/jest-dom"],
     "baseUrl": "./src",
     "paths": {
       "@/*": ["*"]
