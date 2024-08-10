@@ -1,4 +1,4 @@
-import { UnitFactorsType } from "./types/types";
+import { UnitFactorsType } from "../types/types";
 
 export const lengthUnitFactors: UnitFactorsType = {
   mm: 0.001,
