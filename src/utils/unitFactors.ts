@@ -32,3 +32,21 @@ export const volumeUnitFactors: UnitFactorsType = {
   qt: 0.946353,
   gal: 3.78541,
 };
+
+export const timeUnitFactors: UnitFactorsType = {
+  ms: 0.001,
+  s: 1,
+  min: 60,
+  h: 3600,
+  d: 86400,
+  w: 604800,
+  y: 31536000,
+};
+
+export const dataUnitFactors: UnitFactorsType = {
+  b: 1,
+  kb: 1024,
+  mb: 1048576,
+  gb: 1073741824,
+  tb: 1099511627776,
+};
