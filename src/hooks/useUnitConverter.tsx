@@ -1,18 +1,15 @@
-import { useState, useRef, useContext } from "react";
-import { SelectedUnitContext } from "@/store/selectedUnitContext";
+import { useState, useRef } from "react";
 import { lengthUnits, weightUnits, volumeUnits } from "@/utils/units";
 
-export function useUnitConverter() {
+export function useUnitConverter(unitType: string | undefined) {
   const [enteredUnit, setEnteredUnit] = useState(0);
   const [unit, setUnit] = useState("");
   const [targetUnit, setTargetUnit] = useState("");
 
   const inputUnit = useRef<HTMLInputElement>(null);
 
-  const { selectedUnitState } = useContext(SelectedUnitContext);
-
-  const unitType = (() => {
-    switch (selectedUnitState) {
+  const units = (() => {
+    switch (unitType) {
       case "length":
         return lengthUnits;
       case "weight":
@@ -44,7 +41,7 @@ export function useUnitConverter() {
     enteredUnit,
     unit,
     targetUnit,
-    unitType,
+    unitType: units,
     inputUnit,
     handleSubmit,
   };
