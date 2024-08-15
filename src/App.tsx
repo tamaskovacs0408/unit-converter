@@ -27,6 +27,7 @@ const router = createBrowserRouter([
         path: 'converter/:unitType',
         element: (
           <>
+            <NavLink className="back-btn" to="/">Select new unit</NavLink>
             <ConverterForm />
             <ModalPortal />
           </>
