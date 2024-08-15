@@ -12,8 +12,8 @@ export default function Button(props: ButtonProps) {
 
   return (
     <>
-      <Link to={`/converter/${id}`}>
-        <label htmlFor={id} className={classes.selectorButton}>
+      <Link className={classes.selectorButton} to={`/converter/${id}`}>
+        <label htmlFor={id} >
           <span>{title}</span>
           <input
             type='radio'
