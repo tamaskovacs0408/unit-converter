@@ -1,9 +1,11 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { ResultType } from "@/types/types";
 import {
   lengthUnitFactors,
   weightUnitFactors,
   volumeUnitFactors,
+  dataUnitFactors,
+  timeUnitFactors,
 } from "@/utils/unitFactors";
 import { unitConverter, toPowerOf10 } from "@/utils/converter";
 
@@ -23,6 +25,12 @@ export default function UnitResult({ unit, fromUnit, targetUnit }: ResultType) {
       break;
     case "volume":
       unitFactor = volumeUnitFactors;
+      break;
+    case "data":
+      unitFactor = dataUnitFactors;
+      break;
+    case "time":
+      unitFactor = timeUnitFactors;
       break;
     default:
       unitFactor = {};

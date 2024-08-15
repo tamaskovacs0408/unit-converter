@@ -8,6 +8,8 @@ export default function Selector() {
     { id: "length", title: "Length" },
     { id: "weight", title: "Weight" },
     { id: "volume", title: "Volume" },
+    { id: "data", title: "Data" },
+    { id: "time", title: "Time" },
   ];
 
   const { handleUnitSelect } = useContext(SelectedUnitContext);
@@ -15,14 +17,14 @@ export default function Selector() {
   return (
     <div className={classes["selector-wrapper"]}>
       <header>
-      {buttons.map(button => (
-            <Button
-              key={button.id}
-              id={button.id}
-              title={button.title}
-              handleUnitSelect={handleUnitSelect}
-            />
-          ))}
+        {buttons.map(button => (
+          <Button
+            key={button.id}
+            id={button.id}
+            title={button.title}
+            handleUnitSelect={handleUnitSelect}
+          />
+        ))}
       </header>
     </div>
   );
