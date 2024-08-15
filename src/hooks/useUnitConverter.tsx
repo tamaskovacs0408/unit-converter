@@ -1,5 +1,11 @@
 import { useState, useRef } from "react";
-import { lengthUnits, weightUnits, volumeUnits } from "@/utils/units";
+import {
+  lengthUnits,
+  weightUnits,
+  volumeUnits,
+  timeUnits,
+  dataUnits,
+} from "@/utils/units";
 
 export function useUnitConverter(unitType: string | undefined) {
   const [enteredUnit, setEnteredUnit] = useState(0);
@@ -16,6 +22,10 @@ export function useUnitConverter(unitType: string | undefined) {
         return weightUnits;
       case "volume":
         return volumeUnits;
+      case "data":
+        return dataUnits;
+      case "time":
+        return timeUnits;
       default:
         return [];
     }
