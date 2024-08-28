@@ -5,6 +5,8 @@ import {
   convertableLengthUnits,
   convertableWeightUnits,
   convertableVolumeUnits,
+  convertableDataUnits,
+  convertableTimeUnits
 } from "@/utils/units";
 
 interface ModalProps {
@@ -23,6 +25,10 @@ export default function Modal({ showModal, toggleModal }: ModalProps) {
         return convertableWeightUnits;
       case "volume":
         return convertableVolumeUnits;
+      case "data":
+        return convertableDataUnits;
+      case "time":
+        return convertableTimeUnits
       default:
         return [];
     }
