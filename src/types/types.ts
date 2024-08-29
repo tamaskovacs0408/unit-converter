@@ -25,13 +25,7 @@ export type SelectedUnitTypes = string;
 export type ButtonProps = {
   id: string;
   title: string;
-  handleUnitSelect: (unit: SelectedUnitTypes) => void;
 }
-
-export type SelectedUnitContextType = {
-  selectedUnitState: SelectedUnitTypes;
-  handleUnitSelect: (unit: SelectedUnitTypes) => void;
-};
 
 export type ConvertableUnits = {
   id: number;
