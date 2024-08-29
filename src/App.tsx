@@ -1,22 +1,24 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Outlet, NavLink } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
 import "@/App.scss";
 import ConverterForm from "@/components/ConverterForm";
 import ModalPortal from "@/components/ModalPortal";
 import Selector from "@/components/Selector";
-import { SelectedUnitProvider } from "@/store/selectedUnitContext"
 
 const Layout = () => (
-  <SelectedUnitProvider>
-    <main>
-      <Outlet />
-    </main>
-  </SelectedUnitProvider>
+  <main>
+    <Outlet />
+  </main>
 );
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
@@ -24,10 +26,12 @@ const router = createBrowserRouter([
         element: <Selector />,
       },
       {
-        path: 'converter/:unitType',
+        path: "converter/:unitType",
         element: (
           <>
-            <NavLink className="back-btn" to="/">Select new unit</NavLink>
+            <NavLink className='back-btn' to='/'>
+              Select new unit
+            </NavLink>
             <ConverterForm />
             <ModalPortal />
           </>
@@ -37,8 +41,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App: React.FC = () => (
-  <RouterProvider router={router} />
-);
+const App: React.FC = () => <RouterProvider router={router} />;
 
 export default App;
