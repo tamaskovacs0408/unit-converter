@@ -10,7 +10,7 @@ import TimeIcon from "@/UI/TimeIcon"
 import classes from "@/UI/Button.module.scss";
 
 export default function Button(props: ButtonProps) {
-  const { id, title, handleUnitSelect } = props;
+  const { id, title } = props;
 
   return (
     <>
@@ -22,7 +22,6 @@ export default function Button(props: ButtonProps) {
             id={id}
             name='unit'
             defaultChecked={id === "length"}
-            onClick={() => handleUnitSelect(id)}
           />
           {title === "Length" && <LengthIcon />}
           {title === "Weight" && <WeightIcon />}
