@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Button from "@/UI/Button";
 import classes from "@/components/Selector.module.scss";
-import { SelectedUnitContext } from "@/store/selectedUnitContext";
 
 export default function Selector() {
   const buttons = [
@@ -12,8 +10,6 @@ export default function Selector() {
     { id: "time", title: "Time" },
   ];
 
-  const { handleUnitSelect } = useContext(SelectedUnitContext);
-
   return (
     <div className={classes["selector-wrapper"]}>
       <header>
@@ -22,7 +18,6 @@ export default function Selector() {
             key={button.id}
             id={button.id}
             title={button.title}
-            handleUnitSelect={handleUnitSelect}
           />
         ))}
       </header>
