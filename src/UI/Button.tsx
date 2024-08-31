@@ -21,7 +21,6 @@ export default function Button(props: ButtonProps) {
             type='radio'
             id={id}
             name='unit'
-            defaultChecked={id === "length"}
           />
           {title === "Length" && <LengthIcon />}
           {title === "Weight" && <WeightIcon />}
