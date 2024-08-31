@@ -1,32 +1,39 @@
-import { useContext } from "react";
+import { useParams } from "react-router-dom";
 import { ResultType } from "@/types/types";
 import {
   lengthUnitFactors,
   weightUnitFactors,
   volumeUnitFactors,
+  dataUnitFactors,
+  timeUnitFactors,
 } from "@/utils/unitFactors";
 import { unitConverter, toPowerOf10 } from "@/utils/converter";
-import { SelectedUnitContext } from "@/store/selectedUnitContext";
 
 import classes from "@/components/UnitResult.module.scss";
 
-export default function UnitResult(props: ResultType) {
-  const { unit, fromUnit, targetUnit } = props;
-
-  const { selectedUnitState } = useContext(SelectedUnitContext);
+export default function UnitResult({ unit, fromUnit, targetUnit }: ResultType) {
+  const { unitType } = useParams<{ unitType: string }>();
 
   let unitFactor: Record<string, number> = {};
 
-  if (selectedUnitState === "length") {
-    unitFactor = lengthUnitFactors;
-  }
-
-  if (selectedUnitState === "weight") {
-    unitFactor = weightUnitFactors;
-  }
-
-  if (selectedUnitState === "volume") {
-    unitFactor = volumeUnitFactors;
+  switch (unitType) {
+    case "length":
+      unitFactor = lengthUnitFactors;
+      break;
+    case "weight":
+      unitFactor = weightUnitFactors;
+      break;
+    case "volume":
+      unitFactor = volumeUnitFactors;
+      break;
+    case "data":
+      unitFactor = dataUnitFactors;
+      break;
+    case "time":
+      unitFactor = timeUnitFactors;
+      break;
+    default:
+      unitFactor = {};
   }
 
   let result = Number(unitConverter(fromUnit, unit, targetUnit, unitFactor));

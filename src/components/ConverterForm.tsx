@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import UnitResult from "@/components/UnitResult";
 import Input from "@/UI/Input";
 import UnitSelector from "@/components/UnitSelector";
@@ -6,14 +7,19 @@ import { useUnitConverter } from "@/hooks/useUnitConverter";
 import classes from "@/components/ConverterForm.module.scss";
 
 export default function ConverterForm() {
+  const { unitType } = useParams<{ unitType: string }>();
   const {
     enteredUnit,
     unit,
     targetUnit,
-    unitType,
+    unitType: units,
     inputUnit,
     handleSubmit,
-  } = useUnitConverter();
+  } = useUnitConverter(unitType);
+
+  if (!units.length) {
+    return <div>Invalid unit type selected</div>;
+  }
 
   return (
     <>
@@ -22,12 +28,12 @@ export default function ConverterForm() {
           <UnitSelector
             convertTitle='From'
             unitId='from-units'
-            unitsArray={unitType}
+            unitsArray={units}
           />
           <UnitSelector
             convertTitle='To'
             unitId='to-units'
-            unitsArray={unitType}
+            unitsArray={units}
           />
         </div>
         <Input

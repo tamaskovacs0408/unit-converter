@@ -1,7 +1,7 @@
 {
   "name": "unit-converter",
   "private": true,
-  "version": "1.0.2",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +11,13 @@
     "test": "bun test"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "bun-types": "^1.1.21",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-b8a7b48-20240830",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "vite": "^5.3.5"
+    "react-router-dom": "^6.26.1",
+    "vite": "^5.4.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.0",

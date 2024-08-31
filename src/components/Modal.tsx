@@ -1,30 +1,38 @@
-import { useContext, useMemo } from "react";
-import { ModalPorps } from "@/types/types";
+import { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import classes from "@/components/Modal.module.scss";
-import { SelectedUnitContext } from "@/store/selectedUnitContext";
 import {
   convertableLengthUnits,
   convertableWeightUnits,
   convertableVolumeUnits,
+  convertableDataUnits,
+  convertableTimeUnits
 } from "@/utils/units";
 
-export default function Modal(props: ModalPorps) {
-  const { showModal, toggleModal } = props;
+interface ModalProps {
+  showModal: boolean;
+  toggleModal: () => void;
+}
 
-  const { selectedUnitState } = useContext(SelectedUnitContext);
+export default function Modal({ showModal, toggleModal }: ModalProps) {
+  const { unitType } = useParams<{ unitType: string }>();
 
   const convertableUnits = useMemo(() => {
-    switch (selectedUnitState) {
+    switch (unitType) {
       case "length":
         return convertableLengthUnits;
       case "weight":
         return convertableWeightUnits;
       case "volume":
         return convertableVolumeUnits;
+      case "data":
+        return convertableDataUnits;
+      case "time":
+        return convertableTimeUnits
       default:
         return [];
     }
-  }, [selectedUnitState]);
+  }, [unitType]);
 
   return (
     showModal && (
