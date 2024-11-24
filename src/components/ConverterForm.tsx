@@ -5,6 +5,7 @@ import UnitSelector from "@/components/UnitSelector";
 import { useUnitConverter } from "@/hooks/useUnitConverter";
 
 import classes from "@/components/ConverterForm.module.scss";
+import ConvertButton from '@/UI/ConvertButton';
 
 export default function ConverterForm() {
   const { unitType } = useParams<{ unitType: string }>();
@@ -44,7 +45,7 @@ export default function ConverterForm() {
           defaultValue={0}
           ref={inputUnit}
         />
-        <button className={classes["convert-button"]}>Convert</button>
+        <ConvertButton />
       </form>
       <UnitResult unit={unit} targetUnit={targetUnit} fromUnit={enteredUnit} />
     </>

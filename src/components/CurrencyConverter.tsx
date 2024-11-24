@@ -4,6 +4,7 @@ import UnitSelector from '@/components/UnitSelector';
 import Input from '@/UI/Input';
 import { useCurrencyConverter } from '@/hooks/useCurrencyConverter';
 import classes from '@/components/ConverterForm.module.scss';
+import ConvertButton from '@/UI/ConvertButton';
 
 export default function CurrencyConverter() {
   const {
@@ -81,9 +82,7 @@ export default function CurrencyConverter() {
           defaultValue={0}
           ref={inputAmount}
         />
-        <button type='submit' className={classes.button}>
-          Convert
-        </button>
+        <ConvertButton halfWidth={true} />
         {isLoading && <div>Converting...</div>}
         {error && <div className={classes.error}>{error}</div>}
         {convertedAmount !== null && (
