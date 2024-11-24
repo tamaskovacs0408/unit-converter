@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback } from 'react';
 import { CurrencyData } from '@/types/types';
 
-const API_BASE_URL = 'http://localhost:3000';
+// const API_BASE_URL = 'http://localhost:3000';
 
 export const useCurrencyConverter = () => {
   const [currencies, setCurrencies] = useState<CurrencyData[]>([]);
@@ -16,15 +16,13 @@ export const useCurrencyConverter = () => {
     try {
       setIsLoading(true);
       setError(null);
-      const response = await fetch(`${API_BASE_URL}/currencies`);
-      console.log('Fetching currencies response:', response);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/currencies`);
       
       if (!response.ok) {
         throw new Error(`Failed to fetch currencies: ${response.status}`);
       }
       
       const data = await response.json();
-      console.log('Currencies data:', data);
       
       if (!data.currencies || !Array.isArray(data.currencies)) {
         throw new Error('Invalid response format');
@@ -57,7 +55,7 @@ export const useCurrencyConverter = () => {
       setIsLoading(true);
       setError(null);
       const response = await fetch(
-        `${API_BASE_URL}/convert?from=${selectedFromCurrency}&to=${selectedToCurrency}&amount=${amount}`
+        `${import.meta.env.VITE_API_BASE_URL}/convert?from=${selectedFromCurrency}&to=${selectedToCurrency}&amount=${amount}`
       );
       
       if (!response.ok) {
@@ -66,7 +64,6 @@ export const useCurrencyConverter = () => {
       }
       
       const data = await response.json();
-      console.log('Conversion result:', data);
       
       if (typeof data.result !== 'number') {
         throw new Error('Invalid conversion result');
