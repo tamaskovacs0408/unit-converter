@@ -47,3 +47,7 @@ export type CurrencyData = {
   code: string;
   name: string;
 }
+
+export interface ConvertButtonProps {
+  halfWidth?: boolean;
+}
