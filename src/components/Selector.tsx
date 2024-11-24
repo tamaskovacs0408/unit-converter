@@ -8,6 +8,7 @@ export default function Selector() {
     { id: "volume", title: "Volume" },
     { id: "data", title: "Data" },
     { id: "time", title: "Time" },
+    { id: "currency", title: "Currency" },
   ];
 
   return (
