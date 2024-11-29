@@ -1,8 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import { CurrencyData } from '@/types/types';
 
-// const API_BASE_URL = 'http://localhost:3000';
-
 export const useCurrencyConverter = () => {
   const [currencies, setCurrencies] = useState<CurrencyData[]>([]);
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
