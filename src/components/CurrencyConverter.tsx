@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import UnitSelector from '@/components/UnitSelector';
-import Input from '@/UI/Input';
-import { useCurrencyConverter } from '@/hooks/useCurrencyConverter';
-import classes from '@/components/ConverterForm.module.scss';
-import ConvertButton from '@/UI/ConvertButton';
+import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import UnitSelector from "@/components/UnitSelector";
+import Input from "@/UI/Input";
+import { useCurrencyConverter } from "@/hooks/useCurrencyConverter";
+import classes from "@/components/ConverterForm.module.scss";
+import ConvertButton from "@/UI/ConvertButton";
+import CurrencyLoadingIcon from "@/UI/CurrencyLoadingIcon";
 
 export default function CurrencyConverter() {
   const {
@@ -32,7 +33,9 @@ export default function CurrencyConverter() {
     }
   }, [currencies, setSelectedFromCurrency, setSelectedToCurrency]);
 
-  const handleFromCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleFromCurrencyChange = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setSelectedFromCurrency(e.target.value);
   };
 
@@ -41,35 +44,51 @@ export default function CurrencyConverter() {
   };
 
   if (isLoading) {
-    return <div>Loading currencies...</div>;
+    return (
+      <div className={classes["error-message"]}>
+        <h2>The currencies are loading...</h2>
+        <CurrencyLoadingIcon />
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className={classes["error-message"]}>
+        The currencies are not available. Please try again later.
+        <p>Error: {error}</p>
+      </div>
+    );
   }
 
   if (!currencies || currencies.length === 0) {
-    return <div>No currencies available.</div>;
+    return <div className={classes["error-message"]}>No currencies available.</div>;
   }
 
   return (
     <>
-      <NavLink className='back-btn' to='/'>
+      <NavLink className='back-btn currency' to='/'>
         Select new unit
       </NavLink>
       <form className={classes.form} onSubmit={handleConvert}>
-        <div className={classes['form-header']}>
+        <div className={classes["form-header"]}>
           <UnitSelector
             convertTitle='From'
             unitId='from-units'
-            unitsArray={currencies.map(c => ({ name: `${c.code} - ${c.name}`, value: c.code }))}
+            unitsArray={currencies.map(c => ({
+              name: `${c.code} - ${c.name}`,
+              value: c.code,
+            }))}
             value={selectedFromCurrency}
             onChange={handleFromCurrencyChange}
           />
           <UnitSelector
             convertTitle='To'
             unitId='to-units'
-            unitsArray={currencies.map(c => ({ name: `${c.code} - ${c.name}`, value: c.code }))}
+            unitsArray={currencies.map(c => ({
+              name: `${c.code} - ${c.name}`,
+              value: c.code,
+            }))}
             value={selectedToCurrency}
             onChange={handleToCurrencyChange}
           />
