@@ -32,3 +32,11 @@
   color: vars.$primary;
   font-weight: bold;
 }
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  font-size: 2rem;
+}
