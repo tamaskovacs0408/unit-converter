@@ -16,6 +16,10 @@
     align-items: center;
     gap: 3rem;
   }
+
+  .form-header.currency {
+    flex-direction: column;
+  }
 }
 
 .error {
@@ -39,4 +43,8 @@
   place-content: center;
   place-items: center;
   font-size: 2rem;
+
+  h2 {
+    text-align: center;
+  }
 }

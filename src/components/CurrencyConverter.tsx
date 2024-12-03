@@ -69,9 +69,9 @@ export default function CurrencyConverter() {
     <>
       <NavLink className='back-btn currency' to='/'>
         Select new unit
-      </NavLink>
+        </NavLink>
       <form className={classes.form} onSubmit={handleConvert}>
-        <div className={classes["form-header"]}>
+        <div className={classes["form-header currency"]}>
           <UnitSelector
             convertTitle='From'
             unitId='from-units'
