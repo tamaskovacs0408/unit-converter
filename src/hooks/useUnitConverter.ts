@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   lengthUnits,
   weightUnits,
@@ -12,6 +12,7 @@ export function useUnitConverter(unitType: string | undefined) {
   const [unit, setUnit] = useState("");
   const [targetUnit, setTargetUnit] = useState("");
 
+  // eslint-disable-next-line no-undef
   const inputUnit = useRef<HTMLInputElement>(null);
 
   const units = (() => {
