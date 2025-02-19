@@ -1,4 +1,5 @@
-import { useRef, useState, useCallback } from 'react';
+/* eslint-disable no-undef */
+import React, { useRef, useState, useCallback } from 'react';
 import { CurrencyData } from '@/types/types';
 
 export const useCurrencyConverter = () => {
@@ -32,6 +33,7 @@ export const useCurrencyConverter = () => {
         setSelectedToCurrency(data.currencies[0].code);
       }
     } catch (err) {
+      // eslint-disable-next-line no-undef
       console.error('Error in fetchCurrencies:', err);
       setError(err instanceof Error ? err.message : 'Failed to load currencies');
     } finally {
