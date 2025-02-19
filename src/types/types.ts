@@ -14,10 +14,15 @@ export type InputComponentType = {
   unitId: string;
 } & ComponentPropsWithRef<'input'>;
 
+export type UnitOption = {
+  name: string;
+  value: string;
+};
+
 export type UnitSelectorProps = {
   convertTitle: string;
   unitId: string;
-  unitsArray: string[];
+  unitsArray: string[] | UnitOption[];
 };
 
 export type SelectedUnitTypes = string;
@@ -36,4 +41,13 @@ export type ConvertableUnits = {
 export type ModalPorps = {
   showModal: boolean;
   toggleModal: () => void;
+}
+
+export type CurrencyData = {
+  code: string;
+  name: string;
+}
+
+export interface ConvertButtonProps {
+  halfWidth?: boolean;
 }

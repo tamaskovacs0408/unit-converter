@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "@/App.scss";
 import ConverterForm from "@/components/ConverterForm";
+import CurrencyConverter from "@/components/CurrencyConverter";
 import ModalPortal from "@/components/ModalPortal";
 import Selector from "@/components/Selector";
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <Selector />,
       },
       {
+        path: "converter/currency",
+        element: <CurrencyConverter />,
+      },
+      {
         path: "converter/:unitType",
         element: (
           <>
@@ -36,10 +41,16 @@ const router = createBrowserRouter([
             <ModalPortal />
           </>
         ),
+        caseSensitive: true,
       },
     ],
   },
-]);
+], {
+  future: {
+    v7_relativeSplatPath: true,
+    v7_partialHydration: true
+  }
+});
 
 const App: React.FC = () => <RouterProvider router={router} />;
 
