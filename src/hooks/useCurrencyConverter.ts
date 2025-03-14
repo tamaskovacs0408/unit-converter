@@ -33,7 +33,6 @@ export const useCurrencyConverter = () => {
         setSelectedToCurrency(data.currencies[0].code);
       }
     } catch (err) {
-      // eslint-disable-next-line no-undef
       console.error('Error in fetchCurrencies:', err);
       setError(err instanceof Error ? err.message : 'Failed to load currencies');
     } finally {
