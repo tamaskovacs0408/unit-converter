@@ -45,12 +45,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-], {
-  future: {
-    v7_relativeSplatPath: true,
-    v7_partialHydration: true
-  }
-});
+]);
 
 const App: React.FC = () => <RouterProvider router={router} />;
 
