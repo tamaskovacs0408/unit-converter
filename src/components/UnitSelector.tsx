@@ -1,3 +1,4 @@
+import React from 'react';
 import { UnitOption } from "@/types/types";
 import classes from "@/components/UnitSelector.module.scss";
 
@@ -6,6 +7,7 @@ interface UnitSelectorProps {
   unitId: string;
   unitsArray: Array<UnitOption | string>;
   value?: string;
+  // eslint-disable-next-line no-unused-vars, no-undef
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
