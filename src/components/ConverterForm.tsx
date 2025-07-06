@@ -42,8 +42,8 @@ export default function ConverterForm() {
           type='number'
           step={0.01}
           min={0}
-          defaultValue={0}
           ref={inputUnit}
+          placeholder='0'
         />
         <ConvertButton />
       </form>

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+/* eslint-disable no-undef */
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import UnitSelector from "@/components/UnitSelector";
 import Input from "@/UI/Input";
@@ -98,7 +99,7 @@ export default function CurrencyConverter() {
           type='number'
           step='0.01'
           min='0'
-          defaultValue={0}
+          placeholder="0"
           ref={inputAmount}
         />
         <ConvertButton halfWidth={true} />
