@@ -29,8 +29,8 @@ export default function CurrencyConverter() {
 
   useEffect(() => {
     if (currencies.length > 0) {
-      setSelectedFromCurrency(currencies[0].code);
-      setSelectedToCurrency(currencies[0].code);
+      setSelectedFromCurrency(currencies[44].code);
+      setSelectedToCurrency(currencies[61].code);
     }
   }, [currencies, setSelectedFromCurrency, setSelectedToCurrency]);
 
@@ -97,10 +97,10 @@ export default function CurrencyConverter() {
         <Input
           unitId='currency-amount'
           type='number'
-          step='0.01'
-          min='0'
-          placeholder="0"
-          ref={inputAmount}
+          step={0.1}
+          min={1}
+          placeholder="1"
+          inputRef={inputAmount}
         />
         <ConvertButton halfWidth={true} />
         {isLoading && <div>Converting...</div>}

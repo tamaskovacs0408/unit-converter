@@ -1,29 +1,19 @@
 @use "@/_variables.scss" as vars;
 
 .label {
-  width: 50%;
-  font-size: 2rem;
-  text-align: center;
-  display: flex;
-  gap: 2.5rem;
-  color: vars.$secondary;
+    width: 50%;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    gap: 2.5rem;
+    color: vars.$secondary;
+}
 
-  select {
+.select {
     border: none;
-    outline: .5px solid vars.$secondary;
+    outline: 0.5px solid vars.$secondary;
     background: transparent;
     font-size: 1.5rem;
     color: vars.$secondary;
-
-    &:focus {
-      box-shadow: 0px 0px 8px 1px vars.$primary;
-    }
-  }
-
-  option {
-    background-color: rgba(255, 255, 255, 0.119);
-    border: none;
-    font-size: 1.5rem;
-    color: #000;
-  }
+    padding: 0.8rem;
 }

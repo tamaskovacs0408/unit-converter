@@ -29,8 +29,8 @@ export const useCurrencyConverter = () => {
       
       setCurrencies(data.currencies);
       if (data.currencies.length > 0) {
-        setSelectedFromCurrency(data.currencies[0].code);
-        setSelectedToCurrency(data.currencies[0].code);
+        setSelectedFromCurrency(data.currencies[44].code);
+        setSelectedToCurrency(data.currencies[61].code);
       }
     } catch (err) {
       console.error('Error in fetchCurrencies:', err);

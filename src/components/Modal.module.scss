@@ -17,7 +17,7 @@
     position: relative;
     width: 50%;
     height: 50%;
-    background: #FFF;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,10 +26,60 @@
     border-radius: 1rem;
     padding: 2rem;
 
-    ul, li {
+    @media screen and (max-width: 1000px) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 80%;
+        height: 80%;
+    }
+
+    ul,
+    li {
         list-style: none;
-        font-size: 2rem;
+        font-size: 1.8rem;
         padding: 0;
+
+        @media screen and (max-width: 475px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 50%;
+        overflow-y: auto;
+
+         @media screen and (max-width: 768px) {
+            width: 80%;
+        }
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        border: 1px solid vars.$primary;
+        border-radius: 1rem;
+    }
+
+    li span:first-child {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        white-space: nowrap;
+        color: #fff;
+        font-size: 1.5rem;
+        background-color: vars.$primary;
+        border: 10px solid vars.$primary;
+        border-radius: 50%;
     }
 
     button {

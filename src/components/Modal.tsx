@@ -42,7 +42,8 @@ export default function Modal({ showModal, toggleModal }: ModalProps) {
           <ul>
             {convertableUnits.map(data => (
               <li key={data.id}>
-                {data.unit} - {data.title}
+                <span>{data.unit}</span>
+                <span>{data.title}</span>
               </li>
             ))}
           </ul>

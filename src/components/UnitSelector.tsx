@@ -21,11 +21,11 @@ export default function UnitSelector({
   return (
     <div>
       <label className={classes.label} htmlFor={unitId}>{convertTitle}</label>
-      <select name={unitId} id={unitId} value={value} onChange={onChange}>
+      <select className={classes.select} name={unitId} id={unitId} value={value} onChange={onChange}>
         {unitsArray.map((unit) => {
           if (typeof unit === 'string') {
             return (
-              <option key={unit} value={unit}>
+              <option className={classes.option} key={unit} value={unit}>
                 {unit}
               </option>
             );

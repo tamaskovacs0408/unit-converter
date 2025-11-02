@@ -1,13 +1,14 @@
-import { forwardRef } from "react";
+import type { RefObject } from "react";
 import { InputComponentType } from "@/types/types";
 
 import classes from "@/UI/Input.module.scss";
 
-const Input = forwardRef<HTMLInputElement, InputComponentType>(function (
-  props,
-  ref
+type InputProps = InputComponentType & { inputRef?: RefObject<HTMLInputElement | null> };
+
+const Input = function (
+  props: InputProps
 ) {
-  const { unitId, ...others } = props;
+  const { unitId, min, inputRef, ...others} = props;
   return (
     <div>
       <label htmlFor={unitId}>
@@ -15,12 +16,12 @@ const Input = forwardRef<HTMLInputElement, InputComponentType>(function (
           className={classes.input}
           id={unitId}
           {...others}
-          ref={ref}
-          min={0.01}
+          ref={inputRef}
+          min={min}
         />
       </label>
     </div>
   );
-});
+};
 
 export default Input;
