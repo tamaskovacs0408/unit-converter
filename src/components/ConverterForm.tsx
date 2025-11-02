@@ -41,9 +41,9 @@ export default function ConverterForm() {
           unitId='length-unit'
           type='number'
           step={0.01}
-          min={0}
+          min={1}
           ref={inputUnit}
-          placeholder='0'
+          placeholder='1'
         />
         <ConvertButton />
       </form>
