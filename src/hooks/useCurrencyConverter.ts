@@ -22,8 +22,6 @@ export const useCurrencyConverter = () => {
       }
       
       const data = await response.json();
-
-      console.log("currency data", data)
       
       if (!data.currencies || !Array.isArray(data.currencies)) {
         throw new Error('Invalid response format');
