@@ -100,7 +100,7 @@ export default function CurrencyConverter() {
           step={0.1}
           min={1}
           placeholder="1"
-          ref={inputAmount}
+          inputRef={inputAmount}
         />
         <ConvertButton halfWidth={true} />
         {isLoading && <div>Converting...</div>}

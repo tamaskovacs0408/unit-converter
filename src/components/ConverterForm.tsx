@@ -42,7 +42,7 @@ export default function ConverterForm() {
           type='number'
           step={0.01}
           min={1}
-          ref={inputUnit}
+          inputRef={inputUnit}
           placeholder='1'
         />
         <ConvertButton />
