@@ -7,7 +7,7 @@ const Input = forwardRef<HTMLInputElement, InputComponentType>(function (
   props,
   ref
 ) {
-  const { unitId, ...others } = props;
+  const { unitId, min, ...others} = props;
   return (
     <div>
       <label htmlFor={unitId}>
@@ -16,7 +16,7 @@ const Input = forwardRef<HTMLInputElement, InputComponentType>(function (
           id={unitId}
           {...others}
           ref={ref}
-          min={0.01}
+          min={min}
         />
       </label>
     </div>
