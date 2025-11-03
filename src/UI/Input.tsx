@@ -18,6 +18,7 @@ const Input = function (
           {...others}
           ref={inputRef}
           min={min}
+          inputMode="numeric"
         />
       </label>
     </div>
