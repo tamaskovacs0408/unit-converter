@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import UnitSelector from "@/components/UnitSelector";
 import Input from "@/UI/Input";
@@ -15,24 +15,12 @@ export default function CurrencyConverter() {
     isLoading,
     error,
     inputAmount,
-    fetchCurrencies,
     handleConvert,
     selectedFromCurrency,
     selectedToCurrency,
     setSelectedFromCurrency,
     setSelectedToCurrency,
   } = useCurrencyConverter();
-
-  useEffect(() => {
-    fetchCurrencies();
-  }, [fetchCurrencies]);
-
-  useEffect(() => {
-    if (currencies.length > 0) {
-      setSelectedFromCurrency(currencies[44].code);
-      setSelectedToCurrency(currencies[61].code);
-    }
-  }, [currencies, setSelectedFromCurrency, setSelectedToCurrency]);
 
   const handleFromCurrencyChange = (
     e: React.ChangeEvent<HTMLSelectElement>
@@ -63,14 +51,16 @@ export default function CurrencyConverter() {
   }
 
   if (!currencies || currencies.length === 0) {
-    return <div className={classes["error-message"]}>No currencies available.</div>;
+    return (
+      <div className={classes["error-message"]}>No currencies available.</div>
+    );
   }
 
   return (
     <>
       <NavLink className='back-btn currency' to='/'>
         Select new unit
-        </NavLink>
+      </NavLink>
       <form className={classes.form} onSubmit={handleConvert}>
         <div className={classes["form-header currency"]}>
           <UnitSelector
@@ -99,7 +89,7 @@ export default function CurrencyConverter() {
           type='number'
           step={0.1}
           min={1}
-          placeholder="1"
+          placeholder='1'
           inputRef={inputAmount}
         />
         <ConvertButton halfWidth={true} />
