@@ -10,7 +10,6 @@ import ConverterForm from "@/components/ConverterForm";
 import CurrencyConverter from "@/components/CurrencyConverter";
 import ModalPortal from "@/components/ModalPortal";
 import Selector from "@/components/Selector";
-import { Analytics } from "@vercel/analytics/next"
 
 const Layout = () => (
   <main>
@@ -40,7 +39,6 @@ const router = createBrowserRouter([
             </NavLink>
             <ConverterForm />
             <ModalPortal />
-            <Analytics />
           </>
         ),
         caseSensitive: true,
